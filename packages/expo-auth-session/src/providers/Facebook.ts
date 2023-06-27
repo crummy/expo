@@ -28,6 +28,9 @@ export const discovery: DiscoveryDocument = {
 };
 
 // @needsAudit @docsMissing
+/**
+ * @deprecated
+ */
 export interface FacebookAuthRequestConfig extends ProviderAuthRequestConfig {
   /**
    * Expo web client ID for use in the browser.
