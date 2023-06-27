@@ -29,6 +29,7 @@ class BareUpdateManifest private constructor(
 ) : UpdateManifest {
   override val updateEntity: UpdateEntity by lazy {
     UpdateEntity(mId, mCommitTime, mRuntimeVersion, mScopeKey).apply {
+      manifest = this@BareUpdateManifest.manifest.getRawJson()
       status = UpdateStatus.EMBEDDED
     }
   }

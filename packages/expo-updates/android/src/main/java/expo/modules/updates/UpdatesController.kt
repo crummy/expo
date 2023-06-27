@@ -372,7 +372,7 @@ class UpdatesController private constructor(
               remoteLoadStatus = ErrorRecoveryDelegate.RemoteLoadStatus.NEW_UPDATE_LOADED
               logger.info("UpdatesController onBackgroundUpdateFinished: Update available", UpdatesErrorCode.None)
               val params = Arguments.createMap()
-              params.putString("manifestString", update.manifest.toString())
+              params.putString("manifestString", update.manifest!!.toString())
               sendLegacyUpdateEventToJS(UPDATE_AVAILABLE_EVENT, params)
               stateMachine.processEvent(
                 UpdatesStateEvent.DownloadCompleteWithUpdate(update.manifest!!)
